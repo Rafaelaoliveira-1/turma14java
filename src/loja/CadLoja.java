@@ -9,50 +9,67 @@ public class CadLoja {
 	public static void main (String[] args) {
 		
 		// PROGRAMA RODA AQUI
+		
 		Scanner leia = new Scanner (System.in);
 		
 		int comprarProdutos, gerenciarEstoque, sair;
 		String nomeCliente;
 		char generoCliente;
 		int opcaoMenu;
+		final int tamanhoLinha = 80;
+		char continuar = 'S';
 		
-		
-		linha();
-		System.out.println("                   SAFÁRI PELUCIAS            ");
-		linha();
-		System.out.println("              'Tenha uma vida mais fofa'      \n");
-
-		
-		System.out.println("Digite [1] COMPRAR PRODUTOS \n");
-		System.out.println("Digite [2] GERENCIAR ESTOQUE \n");
-		System.out.println("Digite [3] SAIR \n");
-		System.out.println("ESCOLHA UMA DAS OPÇÕES ACIMA");
-		opcaoMenu = leia.nextInt();
-		
-		switch(opcaoMenu);
-		{
-		case 1:
-			System.out.println("Qual o seu nome: \n");
-			nomeCliente = leia.next();
-			System.out.println ("Gênero - Aperte [M] Masculino, [F] Feminino ou [O] Outrxs");
-			generoCliente = leia.next().charAt(0);
-		//	
-			break;
-			
-		case 2:
-			
-			System.out.println("Em construção...");
-			break;
-			
-		case 3:
-			linha();
-			System.out.println("Obrigado por visitar nossa loja. ");
+		do {
+			linha(tamanhoLinha);
+			System.out.println("\n                             SAFÁRI PELÚCIAS");
+			System.out.println("                        'Tenha uma vida mais fofa :)'");
+			linha(tamanhoLinha);
 			pularLinha();
-			System.out.println("VOLTE SEMPRE!!!");
-			linha();
-			break;
-		}
+			
+			System.out.println("Digite [1] COMPRAR PRODUTOS \n");
+			System.out.println("Digite [2] GERENCIAR ESTOQUE \n");
+			System.out.println("Digite [3] SAIR \n");
+			System.out.println("ESCOLHA UMA DAS OPÇÕES ACIMA \n");
+			opcaoMenu = leia.nextInt();
+			
+			switch(opcaoMenu)
+			{
+			case 1:
+				leia.nextLine(); //É usado para limpar e colocar o nome completo.
+				System.out.println("Qual o seu nome: \n");
+				nomeCliente = leia.nextLine();
+				System.out.println ("Gênero - Aperte [M] Masculino, [F] Feminino ou [O] Outrx");
+				generoCliente = leia.next().toUpperCase().charAt(0);
+				pularLinha();
+				
+				System.out.printf("Seja bem-vind%s, %s",retornaGenero(generoCliente), nomeCliente);
+				
+				System.out.printf("\nDeseja continuar? [S] SIM OU [N] NÃO");
+					continuar = leia.next().toUpperCase().charAt(0);
+					pularLinha();
+				break;
+				
+			case 2:
+				
+				System.out.println("WIP");
+				System.out.printf("\nDeseja continuar? [S] SIM OU [N] NÃO");
+				continuar = leia.next().toUpperCase().charAt(0);
+				pularLinha();
+				break;
+				
+			case 3:
+				pularLinha();
+				linha(tamanhoLinha);
+				System.out.print("\n                      Obrigado por visitar nossa loja.");
+				System.out.print("\n                             VOLTE SEMPRE!!!");
+				pularLinha();
 
+				break;
+			}
+
+		}
+		while (continuar == 'S');
+	
 	}
 
 	//FUNCOES
@@ -61,27 +78,33 @@ public class CadLoja {
 	{
 		System.out.println("\n");
 	}
-	public static void linha()
+	
+	public static void linha(int tamanhoLinha)
 	{
-		System.out.println("×××××××××××××××××××××××××××××××××××××××××××××××××××××××××××");
+		
+		for (int x=0; x <= tamanhoLinha; x++)
+		{		
+			System.out.print("x");
+		}
+		
 	}
 	
-	public static String retornaGenero(char generoCliente);
+	public static String retornaGenero(char generoCliente)
 	{
-		
+				   
 		String tipo;
-		
-			if (generoCliente == 'M');
+	
+			if (generoCliente == 'M' || generoCliente == 'm')
 			{
-				tipo = "Masculino";
+				tipo = "o";
 			}
-			else if (generoCliente == 'F');
+			else if (generoCliente == 'F' || generoCliente == 'f')
 			{
-				tipo = "Feminino";
+				tipo = "a";
 			}
-			else if (generoCliente == 'O');
+			else if (generoCliente == 'O' || generoCliente == 'o')
 			{
-				tipo = "Outro";
+				tipo = "x";
 			}
 			else
 			{
@@ -92,7 +115,6 @@ public class CadLoja {
 		return tipo;
 		
 	}
-
 	
 	//FIM PROGRAMA
 }
