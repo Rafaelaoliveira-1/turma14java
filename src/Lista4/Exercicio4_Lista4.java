@@ -22,11 +22,11 @@ public class Exercicio4_Lista4
 		            }
 
 
-		        for(int linha = 0; linha < 3; linha++)
+		        for(int linha1 = 0; linha1 < 3; linha1++)
 		        {
 		            for(int coluna = 0; coluna < 3; coluna++)
 		            {
-		                soma = soma + matriz[linha][coluna];
+		                soma = soma + matriz[linha1][coluna];
 		            }
 
 		        }
@@ -34,13 +34,13 @@ public class Exercicio4_Lista4
 		        System.out.println("A soma das matriz é de: " + soma);
 		        System.out.println("\n");
 
-		         for(int linha = 0; linha < 3; linha++)
+		         for(int linha1 = 0; linha1 < 3; linha1++)
 		         {
 		            for(int coluna = 0; coluna < 3; coluna++)
 		            {
-		                if(linha == coluna)
+		                if(linha1 == coluna)
 		                {
-		                    soma = matriz[linha][coluna] + soma;
+		                    soma = matriz[linha1][coluna] + soma;
 		                }
 
 		            }
