@@ -85,7 +85,9 @@ public class CadLoja {
 				}
 				
 				//FIM ESTOQUE
+				
 			//SOLICITA CÓDIGO PARA COMPRA
+				
 				pularLinha();
 				System.out.println("Selecione pelo código o produto:");
 				sacola = leia.next().toUpperCase();
@@ -131,10 +133,6 @@ public class CadLoja {
 							
 				System.out.println("WIP");
 				
-				for ()
-				{
-					
-				}
 				System.out.printf("\nDeseja continuar? [S] SIM OU [N] NÃO");
 				continuar = leia.next().toUpperCase().charAt(0);
 				pularLinha();
