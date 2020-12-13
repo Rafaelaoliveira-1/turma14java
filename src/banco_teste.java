@@ -8,8 +8,6 @@ public class banco_teste {
 		Random random = new Random();
 		Scanner leia = new Scanner(System.in);
 		
-
-
 		String nomeCliente[] = { "Allen de Lima Vieira", "André de Brito Silva da Costa", "Bárbara Liboni Guerra",
 				"Beatriz Martins", "Beymar Jhoel Acapa Lima", "Breno Nogueira Botelho Noccioli",
 				"Daniel Augusto Gomes Ferreira Filho", "Danilo Mendes Ferreira", "Danilo Pereira da Silva",
@@ -69,7 +67,7 @@ public class banco_teste {
 		
 		
 		
-		f(saldo <= 0) {
+		if(saldo <= 0) {
 	        System.out.println("Operação não realizada.");
 	        System.out.println("\n Aperte V para retornar \n");
 	        char voltar = leia.next().toUpperCase().charAt(0);

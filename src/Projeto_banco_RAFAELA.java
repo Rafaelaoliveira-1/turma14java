@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class G5banco {
+public class Projeto_banco_RAFAELA {
 	static Scanner leia = new Scanner(System.in);
 	static Random random = new Random();
 	
