@@ -26,7 +26,7 @@ public class Banco {
 			System.out.println("[1] - Abertura de conta");
 			System.out.println("[2] - Acesso a uma conta existente ");
 			System.out.println("[3] - Sair");
-			System.out.println("■■■■■■■ BEM VINDO ■■■■■■");
+			System.out.println("    ■■■■■■■ BEM VINDO ■■■■■■");
 			
 			menu = leia.nextInt();
 			
@@ -48,12 +48,21 @@ public class Banco {
 					switch(menu) {
 					
 					case 1:
+						
+						System.out.println("EM CONTRUÇÃO!!");
+						sair();
 						break;
 					
 					case 2:
+						
+						System.out.println("EM CONTRUÇÃO!!");
+						sair();
 						break;
 					
 					case 3:
+						
+						System.out.println("EM CONTRUÇÃO!!");
+						sair();
 						break;
 						
 					case 4:
@@ -68,20 +77,26 @@ public class Banco {
 						
 						
 					for (int x = 0; x < 10; x++) {
-						linha();
+						
 						System.out.println("■■■■■■■ CONTA EMPRESA ■■■■■■");
 						System.out.println("DIGITE SEU CPF");
 						cpf = leia.next();
+						linha();
 						
 						System.out.printf("\nOlá " + nomeCliente + "\n");
+						linha();
+						System.out.println("\nSeu SALDO atual é: " + empresa.getSaldo());
 						linha();
 						System.out.println("\nQual a operação que deseja fazer? ");
 						System.out.println("[C] CRÉDITO ou [D] DÉBITO");
 						opcao = leia.next().toUpperCase().charAt(0);
 
 						if (opcao == 'C') {
-
-							System.out.println(nomeCliente + ", Digite o valor para CREDITAR: ");
+							linha();
+							System.out.println("\nSeu SALDO atual é: " + empresa.getSaldo());
+							linha();
+							
+							System.out.println("\n" + nomeCliente + ", Digite o valor para CREDITAR: ");
 							valor = leia.nextDouble();
 							empresa.credito(valor);
 							
@@ -96,14 +111,18 @@ public class Banco {
 							}
 							
 						} else if (opcao == 'D') {
-							System.out.println(nomeCliente + ", Digite o valor para DEBITAR:");
+							linha();
+							System.out.println("\nSeu SALDO atual é: " + empresa.getSaldo());
+							linha();
+							
+							System.out.println("\n" + nomeCliente + ", Digite o valor para DEBITAR:");
 							valor = leia.nextDouble();
 							empresa.debito(valor);
 
 							System.out.println("Seu SALDO atual é: " + empresa.getSaldo());
 							
 							System.out.println("Deseja Continuar?");
-							System.out.println("Para [S]Sim ou [S]Não");
+							System.out.println("Para [S]Sim ou [N]Não");
 							opcaoSimouNao = leia.next().toUpperCase().charAt(0);
 							
 							if(opcaoSimouNao == 'N') {
@@ -120,12 +139,11 @@ public class Banco {
 						empresa.emprestimoSolicitado(valorEmprestimo);
 						
 						double limiteEmprestimo = 10000;
-						
+						linha();
 						System.out.println("\nVocê gostaria de um EMPRESTIMO HOJE?");
-						
 						System.out.println("TEMOS ÓTIMAS CONDIÇÕES PARA VOCÊ!!");
-						
-						System.out.println("Para [S]Sim ou [S]Não");
+						linha();
+						System.out.println("Para [S]Sim ou [N]Não");
 						opcaoSimouNao = leia.next().toUpperCase().charAt(0);
 
 						if (opcaoSimouNao == 'S')
@@ -152,6 +170,10 @@ public class Banco {
 						break;
 						
 					case 5:
+						
+						System.out.println("EM CONTRUÇÃO!!");
+						sair();
+						
 						break;
 						
 					case 6:
@@ -184,9 +206,9 @@ public class Banco {
 		
 		public static void sair() 
 		{
-			
-			System.out.println("\nGRADECEMOS POR USAR O G5 BANK, ATÉ A PRÓXIMA");
-		
+			linha();
+			System.out.println("\nAGRADECEMOS POR USAR O G5 BANK, ATÉ A PRÓXIMA");
+			linha();
 		}
 		
 		public static void linha() 

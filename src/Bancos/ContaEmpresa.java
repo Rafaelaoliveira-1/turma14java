@@ -11,8 +11,8 @@ private double emprestimoEmpresa;
 	{
 		super(numeroConta);
 		this.emprestimoEmpresa=emprestimoEmpresa;
-		
 	}
+	
 	public double getEmprestimoEmpresa() {
 		return emprestimoEmpresa;
 	}

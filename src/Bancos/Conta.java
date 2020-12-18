@@ -20,6 +20,12 @@ public class Conta {
 		this.numeroConta = numeroConta;
 		this.cpf = cpf;
 	}
+	
+	public Conta(String cpf)
+	{
+		
+		this.cpf = cpf;
+	}
 
 	public int getNumeroConta() {
 		return numeroConta;
