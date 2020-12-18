@@ -21,11 +21,13 @@ public class Banco {
 			linha();
 			System.out.print("\nDIGITE O SEU NÚMERO DE CONTA: ");
 			numeroConta = leia.nextInt();
+			
 			System.out.println("■■■■■■■ DETALHES DA CONTA ■■■■■■");
 			System.out.println("[1] - Abertura de conta");
 			System.out.println("[2] - Acesso a uma conta existente ");
 			System.out.println("[3] - Sair");
 			System.out.println("■■■■■■■ BEM VINDO ■■■■■■");
+			
 			menu = leia.nextInt();
 			
 			if(menu == 1) {
@@ -58,7 +60,7 @@ public class Banco {
 						//COMEÇA CODIGO EMPRESTIMO
 						ContaEmpresa empresa = new ContaEmpresa(numeroConta, 10000); //VALOR DE LIMITE EMPRESTIMO É 10 MIL REAIS
 
-						
+						String cpf;
 						char opcao;
 						char opcaoSimouNao;
 						double valorEmprestimo = 0.0;
@@ -67,6 +69,10 @@ public class Banco {
 						
 					for (int x = 0; x < 10; x++) {
 						linha();
+						System.out.println("■■■■■■■ CONTA EMPRESA ■■■■■■");
+						System.out.println("DIGITE SEU CPF");
+						cpf = leia.next();
+						
 						System.out.printf("\nOlá " + nomeCliente + "\n");
 						linha();
 						System.out.println("\nQual a operação que deseja fazer? ");
@@ -178,7 +184,8 @@ public class Banco {
 		
 		public static void sair() 
 		{
-			System.out.println("AGRADECEMOS POR USAR O G5 BANK, ATÉ A PRÓXIMA");
+			
+			System.out.println("\nGRADECEMOS POR USAR O G5 BANK, ATÉ A PRÓXIMA");
 		
 		}
 		
