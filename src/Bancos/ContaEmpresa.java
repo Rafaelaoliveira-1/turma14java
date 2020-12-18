@@ -45,5 +45,4 @@ private double emprestimoEmpresa;
 	//FIM METODO
 	
 	
-	
 }//FIM CONTA EMPRESA

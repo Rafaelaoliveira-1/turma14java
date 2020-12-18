@@ -3,82 +3,83 @@ package Bancos;
 public class Conta {
 
 	//ATRIBUTOS
-		protected int numeroConta;//tem
-		protected double saldo;//tem
-		protected String cpf;//tem
-		
-		
-		//CONSTRUTORES - REGRA DE CRIAÇÃO DA CLASSE
-		//PEDREIRO E PEÃO DE OBRA
-		
-		/*
-		public Conta() //CONSTRUTOR PADRÃO - BÁSICO - MINIMO //CONSTRUTOR TEM O MESMO NOME DA CLASSE
+	private int numeroConta;//tem
+	protected double saldo;//tem
+	private String cpf;//tem
+
+
+	public Conta(int numeroConta) 
+	{
+		this.numeroConta = numeroConta;
+	}
+
+	//SOBRECARGA
+	
+	public Conta(int numeroConta, String cpf)
+	{
+		this.numeroConta = numeroConta;
+		this.cpf = cpf;
+	}
+
+	public int getNumeroConta() {
+		return numeroConta;
+	}
+
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	//FIM SOBRECARGA
+
+	//METODOS 
+
+	public void debito(double valorDebito) 
+	{
+		if (testarSaldo(valorDebito))  
 		{
-			
-		}
-		*/
-		
-		// *SOBRECARGA //A MESMA COISA DE UM JEITO DIFERENTE
-		public Conta(int numeroConta) 
+			this.setSaldo(this.getSaldo() - valorDebito);
+			System.out.println("SALDO TOTAL: R$ " + this.getSaldo());
+		} 
+		else
 		{
-			this.numeroConta = numeroConta;
-		}
-		//*SOBRECARGA
-		public Conta(int numeroConta, String cpf)
-		{
-			this.numeroConta = numeroConta;
-			this.cpf = cpf;
-		}
-		
-		
-		//ENCAPSULAMENTO
-		public int getNumeroConta() {
-			return numeroConta;
+			System.out.println("SALDO INDISPONIVEL");
 		}
 
-		
-		public double getSaldo() {
-			return saldo;
+
+	}
+
+
+
+	public void credito (double valorCredito) 
+	{
+		this.setSaldo(this.getSaldo() + valorCredito);
+		System.out.println("SALDO TOTAL: R$ " + this.getSaldo());
+	}
+
+	public boolean testarSaldo(double valor) 
+	{
+
+		boolean teste;
+		if (valor <= this.getSaldo()) {
+			teste = true;
+		} else {
+			teste = false;
 		}
 
-		public String getCpf() {
-			return cpf;
-		}
-
-		public void setCpf(String cpf) {
-			this.cpf = cpf;
-		}
-
-		
-		
-		//METODOS
-		public void debito(double valorDebito) 
-		{
-			this.saldo = this.saldo - valorDebito;
-			
-		}
-		
-		
-		
-		public void credito (double valorCredito) 
-		{
-			this.saldo = this.saldo + valorCredito;
-		}
-		
-		
-		public void pixDebito(double valorDebitoPix )
-		{
-			this.saldo = this.saldo - valorDebitoPix;
-		}
-		
-		public void pixCredito(double valorCreditoPix )
-		{
-			this.saldo = this.saldo - valorCreditoPix;
-		}
-		
-		public void trocarNumero(int novoNumero) {
-			this.numeroConta = novoNumero;
-		}
-		
+		return teste;
+	}
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	//FIM METODOS 
 	
 }

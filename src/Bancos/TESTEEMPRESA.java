@@ -2,9 +2,9 @@ package Bancos;
 
 import java.util.Scanner;
 
-public class Banco {
-
-public static void main(String[] args) {
+public class TESTEEMPRESA {
+	
+	public static void main(String[] args) {
 		
 		Scanner leia = new Scanner(System.in);
 		
@@ -13,22 +13,22 @@ public static void main(String[] args) {
 		double debito = 0;
 		double saldo = 0;
 		int numeroConta = 0;
-		String nomeCliente = "Ednilson Nascimento";
+		String nomeCliente = "Rafaela Oliveira Silva";
 		char opcao;
 		char opcaoSimouNao;
 		double valorEmprestimo = 0.0;
 		double valor;
 
-		ContaEmpresa empresa = new ContaEmpresa(numeroConta, 10000); //VALOR DE LIMITE EMPRESTIMO Ã‰ 10 MIL REAIS
+		ContaEmpresa empresa = new ContaEmpresa(numeroConta, 10000); //VALOR DE LIMITE EMPRESTIMO É 10 MIL REAIS
 	
 		//public(){
 			
 		//}
 		
 	for (int x = 0; x < 10; x++) {
-		System.out.printf("\nOlÃ¡ " + nomeCliente + "\n");
-		System.out.println("Qual a operaÃ§Ã£o que deseja fazer? ");
-		System.out.println("[C] CRÃ‰DITO ou [D] DÃ‰BITO");
+		System.out.printf("\nOlá " + nomeCliente + "\n");
+		System.out.println("Qual a operação que deseja fazer? ");
+		System.out.println("[C] CRÉDITO ou [D] DÉBITO");
 		opcao = leia.next().toUpperCase().charAt(0);
 
 		if (opcao == 'C') {
@@ -40,7 +40,7 @@ public static void main(String[] args) {
 			System.out.println("Saldo Atual: " + empresa.getSaldo());
 			
 			System.out.println("Deseja Continuar?");
-			System.out.println("Para [S]Sim ou [N]NÃ£o");
+			System.out.println("Para [S]Sim ou [N]Não");
 			opcaoSimouNao = leia.next().toUpperCase().charAt(0);
 			
 			if(opcaoSimouNao == 'N') {
@@ -52,10 +52,10 @@ public static void main(String[] args) {
 			valor = leia.nextDouble();
 			empresa.debito(valor);
 
-			System.out.println("Seu SALDO atual Ã©: " + empresa.getSaldo());
+			System.out.println("Seu SALDO atual é: " + empresa.getSaldo());
 			
 			System.out.println("Deseja Continuar?");
-			System.out.println("Para [S]Sim ou [S]NÃ£o");
+			System.out.println("Para [S]Sim ou [S]Não");
 			opcaoSimouNao = leia.next().toUpperCase().charAt(0);
 			
 			if(opcaoSimouNao == 'N') {
@@ -63,28 +63,28 @@ public static void main(String[] args) {
 			}
 			
 		} else {
-			System.out.println("OPERAÃ‡ÃƒO INVÃLIDA!! ");
+			System.out.println("OPERAÇÃO INVÁLIDA!! ");
 			System.out.println("Procure seu gerente");
 		}
 		
-		//COMEÃ‡A CODIGO EMPRESTIMO
+		//COMEÇA CODIGO EMPRESTIMO
 		
 		empresa.emprestimoSolicitado(valorEmprestimo);
 		
 		double limiteEmprestimo = 10000;
 		
-		System.out.println("\nVocÃª gostaria de um EMPRESTIMO HOJE?");
+		System.out.println("\nVocê gostaria de um EMPRESTIMO HOJE?");
 		
-		System.out.println("TEMOS Ã“TIMAS CONDIÃ‡Ã•ES PARA VOCÃŠ!!");
+		System.out.println("TEMOS ÓTIMAS CONDIÇÕES PARA VOCÊ!!");
 		
-		System.out.println("Para [S]Sim ou [S]NÃ£o");
+		System.out.println("Para [S]Sim ou [S]Não");
 		opcaoSimouNao = leia.next().toUpperCase().charAt(0);
 
 		if (opcaoSimouNao == 'S')
 		{
-			System.out.printf("OlÃ¡ " + nomeCliente + " ,que bom que aproveitou a melhor condiÃ§Ã£o do mercado!");
+			System.out.printf("Olá " + nomeCliente + " ,que bom que aproveitou a melhor condição do mercado!");
 			
-			System.out.printf("\nQuanto vocÃª gostaria de pegar?");
+			System.out.printf("\nQuanto você gostaria de pegar?");
 			valorEmprestimo = leia.nextDouble();
 			
 			if (valorEmprestimo > 0 && valorEmprestimo <= limiteEmprestimo)
@@ -92,8 +92,8 @@ public static void main(String[] args) {
 					
 				empresa.saldo = empresa.saldo + valorEmprestimo;
 					
-					System.out.printf("\n PARABÃ‰NS! VocÃª acabou de adquirir R$ %f\n", valorEmprestimo);
-					System.out.printf("\nSeu saldo atual Ã© %f", empresa.saldo, "\n");
+					System.out.printf("\n PARABÉNS! Você acabou de adquirir R$ %f\n", valorEmprestimo);
+					System.out.printf("\nSeu saldo atual é %f", empresa.saldo, "\n");
 			}
 			
 		}
@@ -109,7 +109,7 @@ public static void main(String[] args) {
 	
 	public static void sair() 
 	{
-		System.out.println("AGRADECEMOS POR USAR O G5 BANK, ATÃ‰ A PRÃ“XIMA");
+		System.out.println("AGRADECEMOS POR USAR O G5 BANK, ATÉ A PRÓXIMA");
 	
 	}
 	
