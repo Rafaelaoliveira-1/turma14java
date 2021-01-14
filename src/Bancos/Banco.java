@@ -14,7 +14,7 @@ public class Banco {
 			double saldo = 0;
 			int numeroConta = 0;
 			int menu;
-			String nomeCliente = "Ednilson Nascimento";
+			String nomeCliente = "Sueli Oliveira";
 
 			linha();
 			System.out.print("\n              BANCO G5 \n");
@@ -78,7 +78,7 @@ public class Banco {
 						
 					for (int x = 0; x < 10; x++) {
 						
-						System.out.println("■■■■■■■ CONTA EMPRESA ■■■■■■");
+						System.out.println("\n■■■■■■■ CONTA EMPRESA ■■■■■■");
 						System.out.println("DIGITE SEU CPF");
 						cpf = leia.next();
 						linha();
@@ -88,7 +88,7 @@ public class Banco {
 						System.out.println("\nSeu SALDO atual é: " + empresa.getSaldo());
 						linha();
 						System.out.println("\nQual a operação que deseja fazer? ");
-						System.out.println("[C] CRÉDITO ou [D] DÉBITO");
+						System.out.println("\n[C] CRÉDITO ou [D] DÉBITO");
 						opcao = leia.next().toUpperCase().charAt(0);
 
 						if (opcao == 'C') {
@@ -102,8 +102,8 @@ public class Banco {
 							
 							System.out.println("Saldo Atual: " + empresa.getSaldo());
 							
-							System.out.println("Deseja Continuar?");
-							System.out.println("Para [S]Sim ou [N]Não");
+							System.out.println("\nDeseja Continuar?");
+							System.out.println("\nPara [S]Sim ou [N]Não");
 							opcaoSimouNao = leia.next().toUpperCase().charAt(0);
 							
 							if(opcaoSimouNao == 'N') {
@@ -122,7 +122,7 @@ public class Banco {
 							System.out.println("Seu SALDO atual é: " + empresa.getSaldo());
 							
 							System.out.println("Deseja Continuar?");
-							System.out.println("Para [S]Sim ou [N]Não");
+							System.out.println("\nPara [S]Sim ou [N]Não");
 							opcaoSimouNao = leia.next().toUpperCase().charAt(0);
 							
 							if(opcaoSimouNao == 'N') {
@@ -143,7 +143,7 @@ public class Banco {
 						System.out.println("\nVocê gostaria de um EMPRESTIMO HOJE?");
 						System.out.println("TEMOS ÓTIMAS CONDIÇÕES PARA VOCÊ!!");
 						linha();
-						System.out.println("Para [S]Sim ou [N]Não");
+						System.out.println("\nPara [S]Sim ou [N]Não");
 						opcaoSimouNao = leia.next().toUpperCase().charAt(0);
 
 						if (opcaoSimouNao == 'S')
