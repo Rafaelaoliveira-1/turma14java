@@ -39,3 +39,5 @@ select * from tb_produto where preco > 50;
 select nome_produto from tb_produto where nome_produto like ('%b%');
 select * from tb_produto where preco > 3 & preco < 60;
 select tb_produto.Cosméticos from tb_produto;
+select * from tb_produto inner join tb_categoria on tb_categoria.categoria.nome = tb_produto.tb_categoria;
+select * from tb_produto where tb_categoria = "Cosméticos";

@@ -39,3 +39,7 @@ insert tb_produtos (nome, preco, quantidade_Produto, categoria_id) values ("Chuv
 select * from tb_produto where preco > 50;
 select nome_produto from tb_produto where nome_produto like ('%c%');
 select * from tb_produto where preco > 3 & preco < 60;
+
+select * from tb_produto inner join tb_categoria on tb_categoria.categoria.nome = tb_produto.tb_categoria;
+
+select * from tb_produto where tb_categoria = "Metal e Acessórios";
